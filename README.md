@@ -71,3 +71,8 @@ Then run the backend script (pose graph and structure refinement):
 ```bash
 python tools/loop_closure/pose_graph_part_optim.py
 ```
+## Acknowledgement
+
+Our codebase builds on the code in [LSG-SLAM](https://github.com/lsg-slam/LSG-SLAM.git),
+[SplaTAM](https://github.com/spla-tam/SplaTAM.git),
+[Luminance-GS](https://github.com/cuiziteng/Luminance-GS.git).
