@@ -40,3 +40,34 @@ python setup.py install
 We use [EuRoC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) and [KITTI](https://www.cvlibs.net/datasets/kitti/) datasets.
 
 For the training of the optimal weights of GRU, we use the [TartanAir](https://theairlab.org/tartanair-dataset).
+
+## Run
+
+Before running `LumiGS-SLAM`, you need to run the data preprocessing scripts first to generate depth images and global features.
+
+1. Data preprocessing
+
+- EuRoC: run `tools/euroc_parser/operate_euroc_data.py`
+- KITTI: run `tools/kitti_parser/operate_kitti_data.py`
+
+2. Frontend + Loop Closure
+
+Run `scripts/loop_closure.py`:
+
+```bash
+python scripts/loop_closure.py configs/euroc/lumigsslam.py
+```
+
+3. Backend Optimization (Pose Graph + Structure Refinement)
+
+Before running `tools/loop_closure/pose_graph_part_optim.py`, you need to run `scripts/slam.py`:
+
+```bash
+python scripts/slam.py configs/euroc/lumigsslam.py
+```
+
+Then run the backend script (pose graph and structure refinement):
+
+```bash
+python tools/loop_closure/pose_graph_part_optim.py
+```
