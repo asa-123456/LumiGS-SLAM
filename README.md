@@ -39,4 +39,4 @@ python setup.py install
 
 We use [EuRoC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) and [KITTI](https://www.cvlibs.net/datasets/kitti/) datasets.
 
-For the training of the optimal weights of GRU, we use the TartanAir dataset (https://theairlab.org/tartanair-dataset).
+For the training of the optimal weights of GRU, we use the [TartanAir](https://theairlab.org/tartanair-dataset).
